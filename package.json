@@ -1,0 +1,26 @@
+{
+  "name": "group-project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/jgreg728/Group-Project-3.git",
+  "author": "SharonFLewis <30419003+sharon-f-lewis@users.noreply.github.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgreg728/Group-Project-3/issues"
+  },
+  "homepage": "https://github.com/jgreg728/Group-Project-3#readme"
+}
