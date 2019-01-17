@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 
-// Requiring passport
+// Requiring passport as we've configured it
 const passport = require("./config/passport");
 
 // Setting up port and requiring modes for syncing
