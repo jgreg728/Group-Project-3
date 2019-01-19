@@ -1,7 +1,7 @@
 // Creating location model
 module.exports = (sequelize, DataTypes) => {
   const Location = sequelize.define("Location", {
-    location: {
+    locationName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
