@@ -1,6 +1,6 @@
 // import express Router and the book controller
 const router = require("express").Router();
-const  activityController = require("../../controllers/yourTour_controllers");
+const  activityController = require("../../controllers/locationControllers");
 
 // Matches with "/api/location"
 router
