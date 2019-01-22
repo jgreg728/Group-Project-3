@@ -17,4 +17,5 @@ module.exports = {
         res.status(422).json(err)
       });
   }
-}
+} 
+console.log(exports)

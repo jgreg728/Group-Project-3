@@ -7,7 +7,7 @@ export default {
   getUserById: function (userId) {
     return axios.get(`/api/user/${userId}`)
   },
-  getMapBox: function (query) {
+  getLocation: function (query) {
       return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
         params: {
           access_token: "pk.eyJ1Ijoic2ZsZXdpczgyNyIsImEiOiJjam1rbXI5dWYwczlkM3FvZThwZ24xbGV5In0.qPist1fS63LzFlIXIsKb8w"
