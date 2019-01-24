@@ -1,3 +1,6 @@
+// Read and set environment variables
+require("dotenv").config();
+
 // Requiring npm packages
 const express = require("express");
 const session = require("express-session");
