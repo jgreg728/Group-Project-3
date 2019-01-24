@@ -5,9 +5,9 @@ const router = express.Router();
 const db = require("../models/activities");
 
 // METHODS TO EDIT DB
- // find recent search items
+ // find recent searched activity
  router.get("/", function(req, res) {
-  activity
+  db
     .selectAll(function(data) {
       const activityObj = {
         activesearch: data
@@ -17,22 +17,26 @@ const db = require("../models/activities");
     });
 }),
 
+// find activity by id(?)
 router.get("/api/activity", function(req, res) {
-  db.selectAll(function(data) {
-    res.json(data);
-  });
+  db
+    .selectAll(function(data) {
+      res.json(data);
+    });
 });
 
+// add an activity to a location
 router.post("/api/activity", function(req, res) {
-  db.insertOne([
-    "activity",
-  ], [
-    req.body.activity, 
-  ], 
-  result => {
-    // Send back the ID of the searched activity
-    res.json({ id: result.insertId });
-  });
+  db
+    .insertOne([
+      "activity",
+    ], [
+      req.body.activity, 
+    ], 
+    result => {
+      // Send back the ID of the searched activity
+      res.json({ id: result.insertId });
+    });
 });
 
 // vvvvvvvv CHECK THE BELOW vvvvvvv
