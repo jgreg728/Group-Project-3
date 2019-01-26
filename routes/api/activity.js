@@ -1,6 +1,6 @@
 // import express Router and the activity controller
 const router = require("express").Router();
-const  activityController = require("../../controllers/locationControllers");
+const  activityController = require("../../controllers/activityControllers");
 
 // Matches with "/api/activity"
 router

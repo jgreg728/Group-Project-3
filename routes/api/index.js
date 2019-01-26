@@ -5,7 +5,12 @@ const activityRoutes = require("./activity");
 const userRoutes = require("./user");
 
 // prefi/api route endpoint with "/tour"
-router.use("/api", locationRoutes, activityRoutes, userRoutes);
+router.use("/location", locationRoutes);
+
+router.use("/activity", activityRoutes);
+
+router.use("/user", userRoutes);
+
 
 // export routes
 module.exports = router;
