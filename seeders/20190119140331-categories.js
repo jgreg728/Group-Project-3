@@ -25,12 +25,6 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      categoryName: 'Bicycles',
-      categorySearch: 'bicycles',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
       categoryName: 'Food',
       categorySearch: 'food',
       createdAt: new Date(),
