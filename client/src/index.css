@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.search-location {
+  text-shadow: 0 0 4px black;
+  font-weight: bold !important;
+}
