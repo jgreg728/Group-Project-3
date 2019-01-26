@@ -12,12 +12,16 @@ const styles = {
 
 const About = (props) => {
   return (
+    
     <div>
          <div
         className="jumbotron jumbotron-fluid text-center d-flex align-items-center justfy-content-center justify-content-center"
         style={styles.hero}
       ></div>
       <h2>What's good dog? what About ABOUT PAGE</h2>
+     <form>
+       
+     </form>
     </div>
   )
 }

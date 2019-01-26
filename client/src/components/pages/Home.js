@@ -17,10 +17,29 @@ const Home = props => {
       <div
         className="jumbotron jumbotron-fluid text-center d-flex align-items-center justfy-content-center justify-content-center"
         style={styles.hero}
+        
       >
+      <form>
+  <label>
+   <span className="text-success search-location"> Search location:</span>
+    <input type="text bg-success" name="seacrh" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
         <h1>Where do we go from here!</h1>
+        <form>
+  <label>
+    
+    <span className="text-success search-location">  Search Activities:</span>
+    <input type="text" name="search" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+    
+
         
       </div>
+      
       <div className="container my-5">
         <div className="row">
           <div className="col-12">
