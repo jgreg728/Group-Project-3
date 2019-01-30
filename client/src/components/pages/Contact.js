@@ -17,7 +17,7 @@ const Contact = props => {
   console.log(props);
   return (
     <div>
-      
+    
       <div
         className="jumbotron jumbotron-fluid text-center d-flex align-items-center justfy-content-center justify-content-center"
         style={styles.hero}
