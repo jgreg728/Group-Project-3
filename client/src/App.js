@@ -6,7 +6,7 @@ import About from "./components/pages/About";
 import Search from "./components/pages/Search";
 import Contact from "./components/pages/Contact";
 import Form from "./components/pages/Form";
-
+import Location from "./components/pages/Location";
 
 
 //const App = () =>{}
@@ -23,7 +23,8 @@ const App = () => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/contact" component={Contact} 
         />
-         <Route exact path="/form" component={Form} />
+        <Route exact path="/form" component={Form} />
+         {/* <Route exact path="/location" component={Location} /> */}
         </switch>
        
         
