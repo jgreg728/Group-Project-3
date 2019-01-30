@@ -10,7 +10,7 @@ export default {
   getLocation: function (query) {
       return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
         params: {
-          access_token: "pk.eyJ1Ijoic2ZsZXdpczgyNyIsImEiOiJjam1rbXI5dWYwczlkM3FvZThwZ24xbGV5In0.qPist1fS63LzFlIXIsKb8w"
+          access_token: process.env.MAPBOX_ID
         }
       })
   },
@@ -34,5 +34,26 @@ export default {
   },
   deleteFavorite: function (favoriteSearch) {
     return axios.delete(`/api/location/${favoriteSearch}`)
+  },
+  searchLocation: function(query) {
+    return axios.get(`https://api.yelp.com/v3/businesses/search?${query}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.YELP_API_KEY}`
+      }
+      }).then(response => {
+        return response.json()
+      }).then(jsonResponse => {
+        if (jsonResponse.businesses) {
+           return jsonResponse.busienss.map(business => {
+            console.log(JSON.stringify(jsonResponse));
+            return {
+              id: business.id,
+              imageSRC: business.image_url,
+              name: business.name,
+              rating: business.rating
+            };
+          })
+        }
+      }).catch(error => console.log(error));
   }
 }

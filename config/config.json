@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "axb5095",
+    "password": "password",
     "database": "activesearch",
     "host": "127.0.0.1",
     "dialect": "mysql"
