@@ -39,7 +39,7 @@ class Home extends React.Component {
             </label>
             <input type="submit" value="Submit" />
           </form>
-          <h1>Where do we go from here!</h1>
+          <h1>Where do we go from here??</h1>
           <form>
             <label>
               <span className="text-success search-location">
@@ -55,7 +55,7 @@ class Home extends React.Component {
         <div className="container my-5">
           <div className="row">
             <div className="col-12">
-              <h3>Sumphin here</h3>
+              <h3>Search Results</h3>
               {this.state.location.map((item,index) => {
                 return <div className='card'>{item}</div>
               })}
