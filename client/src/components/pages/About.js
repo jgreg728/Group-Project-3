@@ -25,7 +25,7 @@ const About = (props) => {
 
         <p>
           More than just normal restaurants and bars to just sit down and eat/drink.
-          </p>
+        </p>
         </h2>
       <form>
 
