@@ -55,7 +55,7 @@ class Home extends React.Component {
         <div className="container my-5">
           <div className="row">
             <div className="col-12">
-              <h3>Sumphin here</h3>
+              <h3></h3>
               {this.state.location.map((item,index) => {
                 return <div className='card'>{item}</div>
               })}
