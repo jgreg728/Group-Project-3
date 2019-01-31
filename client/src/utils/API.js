@@ -8,11 +8,11 @@ export default {
     return axios.get(`/api/user/${userId}`)
   },
   getLocation: function (query) {
-      return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
-        params: {
-          access_token: process.env.MAPBOX_ID
-        }
-      })
+    return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
+      params: {
+        access_token: process.env.MAPBOX_ID
+      }
+    })
   },
   getLocationById: function (locationId) {
     return axios.get(`/api/location/${locationId}`)
@@ -35,25 +35,26 @@ export default {
   deleteFavorite: function (favoriteSearch) {
     return axios.delete(`/api/location/${favoriteSearch}`)
   },
-  searchLocation: function(query) {
+  searchLocation: function (query) {
     return axios.get(`https://api.yelp.com/v3/businesses/search?${query}`, {
       headers: {
-        Authorization: `Bearer ${process.env.YELP_API_KEY}`
+        Authorization: `Bearer gTWGvF0Jd3OSGVdue6Er5lbVDihmtZ3-EUpLoH2wVH-RFHjWM7qw-DE2yBbsRc3GaxIig_aB964Ft2nc1gwS-pXj51RASNDZQJT64tFPLEI-MawguXadbVIDXi1BXHYx`
       }
-      }).then(response => {
-        return response.json()
-      }).then(jsonResponse => {
-        if (jsonResponse.businesses) {
-           return jsonResponse.busienss.map(business => {
-            console.log(JSON.stringify(jsonResponse));
-            return {
-              id: business.id,
-              imageSRC: business.image_url,
-              name: business.name,
-              rating: business.rating
-            };
-          })
-        }
-      }).catch(error => console.log(error));
+    }).then(response => {
+      return response.json()
+    }).then(jsonResponse => {
+      if (jsonResponse.businesses) {
+        return jsonResponse.businesses.map(business => {
+          console.log(JSON.stringify(jsonResponse));
+          return {
+            id: business.id,
+            imageSRC: business.image_url,
+            name: business.name,
+            rating: business.rating,
+            yelpLink: business.url
+          };
+        })
+      }
+    }).catch(error => console.log(error));
   }
 }
