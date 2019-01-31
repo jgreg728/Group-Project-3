@@ -1,5 +1,6 @@
 import React from "react";
 import computer from "./image/rock-climbing.jpg";
+import API from "../../utils/API.js";
 
 // handle search sub
   
@@ -19,7 +20,7 @@ class Home extends React.Component {
 
   handleOnSubmit = e => {
     e.preventDefault();
-    this.setState({location: [1,2,3]})
+    this.API.setState({location: [1,2,3]})
   };
   
   render() {
@@ -38,7 +39,7 @@ class Home extends React.Component {
               <input type="text bg-success" name="seacrh" />
             </label>
             <input type="submit" value="Submit" />
-          </form>
+          </form >
           <h1>Where do we go from here!</h1>
           <form>
             <label>
@@ -59,19 +60,7 @@ class Home extends React.Component {
               {this.state.location.map((item,index) => {
                 return <div className='card'>{item}</div>
               })}
-              {/* <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                alias a recusandae itaque vel accusantium porro. Vitae nostrum
-                ducimus corrupti laborum quas accusamus blanditiis earum unde
-                debitis veniam! Harum, corporis.
-              </p>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                ipsa inventore quam molestiae nobis aperiam expedita
-                repellendus, ut incidunt necessitatibus. Sed quam amet id a
-                odit. Neque inventore quaerat possimus?
-              </p> */}
+        
             </div>
           </div>
         </div>

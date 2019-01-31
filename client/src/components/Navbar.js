@@ -4,7 +4,7 @@ import {Navbar, NavDropdown,Nav,Form,FormControl,Button} from "react-bootstrap";
 
 const Navigation = () => {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Navbar.Brand href="/">Your Tour!</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
