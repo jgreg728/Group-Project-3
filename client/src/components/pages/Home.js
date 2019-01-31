@@ -1,5 +1,5 @@
 import React from "react";
-import computer from "./image/achievement-agreement-arms-1068523.jpg";
+import computer from "./image/rock-climbing.jpg";
 
 // handle search sub
   
