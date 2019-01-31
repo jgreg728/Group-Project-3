@@ -8,11 +8,11 @@ export default {
     return axios.get(`/api/user/${userId}`)
   },
   getLocation: function (query) {
-    return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
-      params: {
-        access_token: process.env.MAPBOX_ID
-      }
-    })
+      return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
+        params: {
+          q: query, access_token: "pk.eyJ1Ijoic2ZsZXdpczgyNyIsImEiOiJjam1rbXI5dWYwczlkM3FvZThwZ24xbGV5In0.qPist1fS63LzFlIXIsKb8w"
+        }
+      })
   },
   getLocationById: function (locationId) {
     return axios.get(`/api/location/${locationId}`)
