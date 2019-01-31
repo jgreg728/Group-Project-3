@@ -29,7 +29,7 @@ app.use('/', routes);
 
 // Syncing our database and staring server
 db.sequelize
-  .sync({force: false})
+  .sync({force: true})
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Listening on port ${PORT}`);

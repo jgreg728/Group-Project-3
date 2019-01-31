@@ -6,6 +6,19 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [1]
       }
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    url: {
+      type: DataTypes.STRING
+    },
+    photos: {
+      type: DataTypes.STRING
+    },
+    rating: {
+      type: DataTypes.FLOAT
     }
   });
 
