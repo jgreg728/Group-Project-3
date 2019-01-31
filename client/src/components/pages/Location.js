@@ -1,13 +1,13 @@
 import React from "react";
 // import Location from "./components/pages/Location";
 
-const searchCard = {
-  name: "",
-  location: "",
-  description: "",
-  photo: "",
-  rating: "",
-}
+// const searchCard = {
+//   name: "",
+//   location: "",
+//   description: "",
+//   photo: "",
+//   rating: "",
+// }
 
 const Location = props => {
   console.log(props);
