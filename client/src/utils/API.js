@@ -8,7 +8,7 @@ export default {
     return axios.get(`/api/user/${userId}`)
   },
   getLocation: function (query) {
-      return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/urlLoc.json", {
+      return axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + query + ".json", {
         params: {
           q: query, access_token: "pk.eyJ1Ijoic2ZsZXdpczgyNyIsImEiOiJjam1rbXI5dWYwczlkM3FvZThwZ24xbGV5In0.qPist1fS63LzFlIXIsKb8w"
         }
@@ -36,7 +36,7 @@ export default {
     return axios.delete(`/api/location/${favoriteSearch}`)
   },
   searchLocation: function (query) {
-    return axios.get(`https://api.yelp.com/v3/businesses/search?${query}`, {
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?${query}`, {
       headers: {
         Authorization: `Bearer gTWGvF0Jd3OSGVdue6Er5lbVDihmtZ3-EUpLoH2wVH-RFHjWM7qw-DE2yBbsRc3GaxIig_aB964Ft2nc1gwS-pXj51RASNDZQJT64tFPLEI-MawguXadbVIDXi1BXHYx`
       }

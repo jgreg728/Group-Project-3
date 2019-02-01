@@ -15,12 +15,34 @@ const styles = {
 
 class Home extends React.Component {
   state = {
-    location: [56]
+    searchTerm: "",
+    location: '',
+    activities: [],
+    locations: []
   };
+
+  handleOnChange = e => {
+    this.setState({location: e.target.value})
+  }
 
   handleOnSubmit = e => {
     e.preventDefault();
-    this.API.setState({location: [1,2,3]})
+    // this.setState({location: [1,2,3]})
+    // search for nearby locations
+    API.getLocation(this.state.location)
+    .then(nearbyLocations => {
+      //search for activities
+      API.searchLocation(this.state.location).then(activities => {
+        let nearby = nearbyLocations.data.features;
+        console.log(nearby)
+        console.log(activities)
+        this.setState({
+          locations: nearby,
+          // activities: activities
+      })
+      });
+    });
+
   };
   
   render() {
@@ -36,18 +58,18 @@ class Home extends React.Component {
                 {" "}
                 Search location:
               </span>
-              <input type="text bg-success" name="seacrh" />
+              <input type="text bg-success" onChange={this.handleOnChange} name="seacrh" />
             </label>
             <input type="submit" value="Submit" />
-          </form >
+          </form>
           <h1>Where do we go from here!</h1>
-          <form>
+          <form onSubmit={this.handleOnSubmit}>
             <label>
               <span className="text-success search-location">
                 {" "}
                 Search Activities:
               </span>
-              <input type="text" name="search" />
+              <input type="text" name="search" value={this.state.location} />
             </label>
             <input type="submit" value="Submit" />
           </form>
@@ -56,11 +78,38 @@ class Home extends React.Component {
         <div className="container my-5">
           <div className="row">
             <div className="col-12">
-              <h3></h3>
-              {this.state.location.map((item,index) => {
-                return <div className='card'>{item}</div>
-              })}
-        
+            {!this.state.activities.length ? 
+               <h3>What do you want to do?</h3>
+               :
+
+              this.state.activities.map(activity => {
+                return (
+                <div className='card' key={activity.id}>
+                {activity.id}
+                {activity.imageSRC}
+                {activity.name}
+                {activity.rating}
+                {activity.yelpLink}
+                </div>
+                )})}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+            {!this.state.locations.length ? 
+               <h3>What do you want to do?</h3>
+               :
+
+              this.state.locations.map(activity => {
+                return (
+                <div className='card' key={activity.id}>
+                {activity.id}
+                {activity.imageSRC}
+                {activity.name}
+                {activity.rating}
+                {activity.yelpLink}
+                </div>
+                )})}
             </div>
           </div>
         </div>
