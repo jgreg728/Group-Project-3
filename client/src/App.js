@@ -6,7 +6,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Search from "./components/pages/Search";
 import Contact from "./components/pages/Contact";
-import Form from "./components/pages/Form";
+import Form from "./components/pages/SearchForm";
 import Location from "./components/pages/Location";
 
 

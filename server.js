@@ -12,6 +12,8 @@ const passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
 
+const routes = './routes';
+
 // Creating express app and configuring middleware for authentication
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -23,10 +25,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
+app.use('/', routes);
 
 // Syncing our database and staring server
 db.sequelize
-  .sync({force: true})
+  .sync({force: false})
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Listening on port ${PORT}`);

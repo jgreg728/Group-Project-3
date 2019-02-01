@@ -1,7 +1,7 @@
 import React from "react";
 import { link, Route } from "react-router-dom";
-import adult from "./image/adult-business-chill-450271.jpg";
-import Form from "./Form";
+import adult from "./image/firework.jpg";
+import Form from "./SearchForm";
 //import Learn from "./Learn";
 
 const styles = {
